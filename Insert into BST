@@ -1,0 +1,26 @@
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+def insert(root, val):
+    if root is None:
+        return Node(val)
+
+    if val < root.val:
+        root.left = insert(root.left, val)
+
+    elif val > root.val:
+        root.right = insert(root.right, val)
+        
+    return root
+
+
+root = None
+root = insert(root, 5)
+root = insert(root, 3)
+root = insert(root, 7)
+print("Root value:", root.val)
+print("Left child:", root.left.val)
+print("Right child:", root.right.val)
